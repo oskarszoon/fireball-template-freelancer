@@ -1,3 +1,9 @@
+Template.header.rendered = function() {
+    Deps.autorun(function(){
+        document.title = Fireball.getSiteSetting('general/title');
+    });
+};
+
 Template.header.helpers({
 	pages: function() {
 		return Fireball.Pages.find({

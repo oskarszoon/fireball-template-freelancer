@@ -14,27 +14,31 @@ Package.onUse(function (api) {
     api.versionsFrom('1.1.0.1');
     api.use('templating', 'client');
     api.use('iron:router');
-    api.use('less', 'client');
+    api.use('twbs:bootstrap');
     api.use('fireball:core');
 
     api.addFiles('fireball:template-freelancer.js');
 
     // Templates
-    api.addFiles('templates/fireball.html', 'client');
-    api.addFiles('templates/head.html', 'client');
-    api.addFiles(['templates/master_layout.html', 'templates/master_layout.js'], 'client');
-    //api.addFiles('templates/master_layout.js', 'client');
-    api.addFiles('templates/not_found.html', 'client');
-    api.addFiles('templates/loading.html', 'client');
+    api.addFiles(['templates/head.html'], 'client');
+    api.addFiles(['templates/layout.html'], 'client');
+    api.addFiles(['templates/notFound.html'], 'client');
+    api.addFiles(['templates/loading.html'], 'client');
+    api.addFiles(['templates/fireball.html'], 'client');
     api.addFiles(['templates/header.html', 'templates/header.js'], 'client');
-    api.addFiles('templates/footer.html', 'client');
+    api.addFiles(['templates/footer.html'], 'client');
 
     // CSS
-    api.addFiles('css/basic.css', 'client');
+    api.addFiles(['css/bootswatch.css', 'css/freelancer.css'], 'client');
+    // TODO: add support for LESS files, currently they can't be easily published from a package to the client
+    // TODO: not include the entire bootswatch CSS, there's a lot of overlap with Bootstrap itself
 
     // components
     api.addFiles(['templates/components/jumbotron.html', 'templates/components/jumbotron.js'], 'client');
     api.addFiles(['templates/components/well.html', 'templates/components/well.js'], 'client');
+
+    // images
+    api.addFiles(['img/profile.png'], 'client', {isAsset: true});
 
     // Default routes, rest will be defined in DB
     api.addFiles('routes.js', 'client');

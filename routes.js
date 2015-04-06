@@ -1,5 +1,5 @@
 Router.configure({
-  layoutTemplate: 'MasterLayout',
-  loadingTemplate: 'Loading',
-  notFoundTemplate: 'NotFound'
+    layoutTemplate: 'layout',
+    loadingTemplate: 'loading',
+    notFoundTemplate: 'notFound'
 });
