@@ -1,0 +1,7 @@
+<template name="Fireball">
+    {{#fireball_basic}}
+        {{#each page.components}}
+            {{> Template.dynamic template=template data=settings}}
+        {{/each}}
+    {{/fireball_basic}}
+</template>

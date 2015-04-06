@@ -1,0 +1,15 @@
+<template name="MasterLayout">
+    <div class="fireball-basic">
+        {{> header}}
+        {{> yield}}
+    </div>
+</template>
+
+<template name="fireball_basic">
+    <div class="main">
+        <div class="container">
+            {{> UI.contentBlock}}
+        </div>
+        {{> footer}}
+    </div>
+</template>
