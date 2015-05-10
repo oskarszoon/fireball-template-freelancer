@@ -1,0 +1,10 @@
+header {
+    background: #499ed7;
+}
+section.success {
+    background: #499ed7;
+}
+hr.star-light:after {
+    content: "\f1d0";
+    background-color: #499ed7;
+}

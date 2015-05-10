@@ -13,6 +13,7 @@ Package.describe({
 Package.onUse(function (api) {
     api.versionsFrom('1.1.0.1');
     api.use('templating', 'client');
+    api.use('jquery', 'client');
     api.use('iron:router');
     api.use('twbs:bootstrap');
     api.use('fireball:core');
@@ -29,19 +30,20 @@ Package.onUse(function (api) {
     api.addFiles(['templates/footer.html'], 'client');
 
     // CSS
-    api.addFiles(['css/bootswatch.css', 'css/freelancer.css'], 'client');
+    api.addFiles(['css/bootswatch.css', 'css/freelancer.css', 'css/custom.css'], 'client');
     // TODO: add support for LESS files, currently they can't be easily published from a package to the client
     // TODO: not include the entire bootswatch CSS, there's a lot of overlap with Bootstrap itself
 
     // components
     api.addFiles(['templates/components/jumbotron.html', 'templates/components/jumbotron.js'], 'client');
     api.addFiles(['templates/components/well.html', 'templates/components/well.js'], 'client');
+    api.addFiles(['templates/components/project.html', 'templates/components/project.js'], 'client');
 
     // images
     api.addFiles(['img/profile.png'], 'client', {isAsset: true});
 
-    // Default routes, rest will be defined in DB
-    api.addFiles('routes.js', 'client');
+    // Javascript files
+    api.addFiles(['routes.js', 'js/classie.js'], 'client');
 });
 
 Package.onTest(function (api) {
